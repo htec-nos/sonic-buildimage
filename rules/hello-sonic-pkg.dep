@@ -1,0 +1,10 @@
+SPATH        := $($(HELLO_PY3)_SRC_PATH)
+DEP_FILES    := $(SONIC_COMMON_FILES_LIST) rules/hello-sonic-pkg.mk rules/hello-sonic-pkg.dep
+DEP_FILES    += $(SONIC_COMMON_BASE_FILES_LIST)
+SMDEP_FILES  := $(addprefix $(SPATH)/,$(shell cd $(SPATH) && git ls-files))
+
+$(HELLO_PY3)_CACHE_MODE   := GIT_CONTENT_SHA
+$(HELLO_PY3)_DEP_FLAGS    := $(SONIC_COMMON_FLAGS_LIST)
+$(HELLO_PY3)_DEP_FILES    := $(DEP_FILES)
+$(HELLO_PY3)_SMDEP_FILES  := $(SMDEP_FILES)
+$(HELLO_PY3)_SMDEP_PATHS  := $(SPATH)

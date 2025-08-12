@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hello-sonic-pkg"
+version = "0.1.0"
+description = "Hello from SONiC"
+requires-python = ">=3.8"
+
+[project.scripts]
+hello-sonic = "src.__main__:main"
+
+[tool.setuptools_scm]
+root = "./"
+# use current tag and not next one
+version_scheme = "post-release"
+write_to = "src/hello-sonic-pkg/_version.py"
