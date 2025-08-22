@@ -1,5 +1,5 @@
 DPATH       := $($(DOCKER_DASH_ENGINE)_PATH)
-DEP_FILES   := $(SONIC_COMMON_FILES_LIST) platform/vs-custom/docker-dash-engine.mk platform/vs-custom/docker-dash-engine.dep   
+DEP_FILES   := $(SONIC_COMMON_FILES_LIST) platform/vs/docker-dash-engine.mk platform/vs/docker-dash-engine.dep   
 DEP_FILES   += $(SONIC_COMMON_BASE_FILES_LIST)
 DEP_FILES   += $(shell git ls-files $(DPATH))
 

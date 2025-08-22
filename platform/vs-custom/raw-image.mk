@@ -1,7 +1,7 @@
-# sonic vs-custom raw image installer
+# sonic vs raw image installer
 
 SONIC_RAW_IMAGE = sonic-vs-custom.raw
-$(SONIC_RAW_IMAGE)_MACHINE = vs-custom
+$(SONIC_RAW_IMAGE)_MACHINE = vs
 $(SONIC_RAW_IMAGE)_IMAGE_TYPE = raw
 $(SONIC_RAW_IMAGE)_INSTALLS += $(SYSTEMD_SONIC_GENERATOR)
 $(SONIC_RAW_IMAGE)_DOCKERS += $(SONIC_INSTALL_DOCKER_IMAGES)

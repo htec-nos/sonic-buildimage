@@ -10,7 +10,7 @@ include /usr/share/dpkg/pkg-info.mk
 export DH_VERBOSE=1
 
 PYTHON        ?= python3
-PACKAGE_PRE_NAME := sonic-platform-vs-custom
+PACKAGE_PRE_NAME := sonic-platform-vs
 SRC_DIR:= $(shell pwd)
 
 %:

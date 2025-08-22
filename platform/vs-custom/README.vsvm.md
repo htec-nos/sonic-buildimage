@@ -34,7 +34,7 @@ DEV_ID_ASIC_3=3
 ..
 DEV_ID_ASIC_<n-1>=<n-1>
 ```
-For example, a four asic VS_CUSTOM asic.conf will be:
+For example, a four asic VS asic.conf will be:
 ```
 NUM_ASIC=4
 DEV_ID_ASIC_0=0
@@ -44,21 +44,21 @@ DEV_ID_ASIC_3=3
 ```
 - Create a topology.sh script which will create the internal asic topology for
 the specific hwsku.
-For example, for msft_multi_asic_vs-custom:
-https://github.com/Azure/sonic-buildimage/blob/master/device/virtual/x86_64-kvm_x86_64-r0/msft_multi_asic_vs-custom/topology.sh
+For example, for msft_multi_asic_vs:
+https://github.com/Azure/sonic-buildimage/blob/master/device/virtual/x86_64-kvm_x86_64-r0/msft_multi_asic_vs/topology.sh
 
-- With the updated asic.conf and topology.sh, build sonic-vs-custom.img which can be used to 
+- With the updated asic.conf and topology.sh, build sonic-vs.img which can be used to 
 bring up multi-asic virtual switch.
 
-- Update platform/vs-custom/sonic_multiasic.xml with higher memory and vcpu as required.
-  - For 4-asic vs-custom platform msft_four_asic_vs-custom hwsku, 8GB memory and 10vCPUs.
-  - For 7-ASIC vs-custom platform msft_multi_asic_vs-custom hwsku, 8GB and 16vCPUs.
+- Update platform/vs/sonic_multiasic.xml with higher memory and vcpu as required.
+  - For 4-asic vs platform msft_four_asic_vs hwsku, 8GB memory and 10vCPUs.
+  - For 7-ASIC vs platform msft_multi_asic_vs hwsku, 8GB and 16vCPUs.
 - Update the number of front-panel interfaces in sonic_multliasic.xml
-    - For 4-ASIC vs-custom platform, 8 front panel interfaces.
-    - For 6-ASIC vs-custom platform, 64 front panel interfaces.
+    - For 4-ASIC vs platform, 8 front panel interfaces.
+    - For 6-ASIC vs platform, 64 front panel interfaces.
 
-- With multi-asic sonic_vs-custom.img and sonic_multiasic.xml file, bring up multi-asic
-vs-custom as:
+- With multi-asic sonic_vs.img and sonic_multiasic.xml file, bring up multi-asic
+vs as:
 
 ```
 $ sudo virsh
@@ -74,16 +74,16 @@ Domain sonic created from sonic.xml
 virsh #
 ```
 
-- Steps to convert a prebuilt single asic sonic-vs-custom.img:
+- Steps to convert a prebuilt single asic sonic-vs.img:
   - Use the updated sonic_multiasic.xml file and bring up virtual switch.
   - Update /usr/share/sonic/device/x86_64-kvm_x86_64-r0/asic.conf as above.
   - Add topology.sh in /usr/share/sonic/device/x86_64-kvm_x86_64-r0/<HWSKU>
-  - stop database service and remove database docker, so that when vs-custom is 
+  - stop database service and remove database docker, so that when vs is 
 rebooted, database_global.json is created with the right namespaces.
     - systemctl stop database
     - docker rm database
   - sudo reboot
-  - Once rebooted, VS_CUSTOM should be multi-asic VS_CUSTOM.
+  - Once rebooted, VS should be multi-asic VS.
 
 - Start topology service.
 ```
