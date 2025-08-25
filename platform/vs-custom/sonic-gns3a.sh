@@ -1,12 +1,12 @@
 #!/bin/bash
 
 # This script creates a .gns3a SONiC appliance file
-IMGFILE="sonic-vs.img"
+IMGFILE="sonic-vs-custom.img"
 RELEASE="latest"
 
 usage() {
-    echo "`basename $0` [ -r <ReleaseNumber> ] -b <SONiC VS image: sonic-vs.img>"
-    echo "e.g.: `basename $0` -r 1.1 -b <store_path>/sonic-vs.img"
+    echo "`basename $0` [ -r <ReleaseNumber> ] -b <SONiC VS image: sonic-vs-custom.img>"
+    echo "e.g.: `basename $0` -r 1.1 -b <store_path>/sonic-vs-custom.img"
     exit 0
 }
 
