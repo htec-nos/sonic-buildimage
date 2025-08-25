@@ -1,6 +1,6 @@
 # only used for non-vs platforms
 
-ifneq ($(CONFIGURED_PLATFORM),vs)
+ifneq ($(filter $(CONFIGURED_PLATFORM),vs vs-custom),)
 
 SYNCD = syncd_1.0.0_$(CONFIGURED_ARCH).deb
 $(SYNCD)_RDEPENDS += $(LIBSAIREDIS) $(LIBSAIMETADATA)
