@@ -13,6 +13,8 @@ $(addprefix $(DEST)/, $(MAIN_TARGET)): $(DEST)/% :
 	# set asic type for virtual switch
 	if [ "$(CONFIGURED_PLATFORM)" = "vpp" ]; then \
 		echo "vpp" > ../../../device/virtual/x86_64-kvm_x86_64-r0/platform_asic; \
+	elif [ "$(CONFIGURED_PLATFORM)" = "vs-custom" ]; then \
+		echo "vs-custom" > ../../../device/virtual/x86_64-kvm_x86_64-r0/platform_asic; \
 	else \
 		echo "vs" > ../../../device/virtual/x86_64-kvm_x86_64-r0/platform_asic; \
 	fi;

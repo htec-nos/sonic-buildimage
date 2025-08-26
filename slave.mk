@@ -326,7 +326,7 @@ endif
 MAKEFLAGS += -j $(SONIC_BUILD_JOBS)
 export SONIC_CONFIG_MAKE_JOBS
 
-ifeq ($(CONFIGURED_PLATFORM),vs)
+ifneq ($(filter vs vs-custom,$(CONFIGURED_PLATFORM)),)
 export BUILD_MULTIASIC_KVM
 endif
 
@@ -477,7 +477,7 @@ $(info "MULTIARCH_QEMU_ENVIRON"          : "$(MULTIARCH_QEMU_ENVIRON)")
 $(info "SONIC_VERSION_CONTROL_COMPONENTS": "$(SONIC_VERSION_CONTROL_COMPONENTS)")
 $(info "ENABLE_ASAN"                     : "$(ENABLE_ASAN)")
 $(info "DEFAULT_CONTAINER_REGISTRY"      : "$(SONIC_DEFAULT_CONTAINER_REGISTRY)")
-ifeq ($(CONFIGURED_PLATFORM),vs)
+ifneq ($(filter vs vs-custom,$(CONFIGURED_PLATFORM)),)
 $(info "BUILD_MULTIASIC_KVM"             : "$(BUILD_MULTIASIC_KVM)")
 endif
 $(info "CROSS_BUILD_ENVIRON"             : "$(CROSS_BUILD_ENVIRON)")
