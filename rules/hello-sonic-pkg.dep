@@ -1,0 +1,10 @@
+SPATH       := $($(HELLO_PKG)_SRC_PATH)
+DEP_FILES   := $(SONIC_COMMON_FILES_LIST) rules/hello-sonic-pkg.mk rules/hello-sonic-pkg.dep
+DEP_FILES   += $(SONIC_COMMON_BASE_FILES_LIST)
+SMDEP_FILES := $(addprefix $(SPATH)/,$(shell cd $(SPATH) && git ls-files))
+
+$(HELLO_PKG)_CACHE_MODE  := GIT_CONTENT_SHA
+$(HELLO_PKG)_DEP_FLAGS   := $(SONIC_COMMON_FLAGS_LIST)
+$(HELLO_PKG)_DEP_FILES   := $(DEP_FILES)
+$(HELLO_PKG)_SMDEP_FILES := $(SMDEP_FILES)
+$(HELLO_PKG)_SMDEP_PATHS := $(SPATH)
