@@ -1,5 +1,5 @@
 Source: hello-sonic-pkg
-Section: unknown
+Section: main
 Priority: optional
 Maintainer: Alberto Martin <alberto.martin@htecgroup.com>
 Rules-Requires-Root: no
@@ -8,31 +8,10 @@ Build-Depends:
  dh-sequence-python3,
  python3-setuptools,
  python3-all,
-#Testsuite: autopkgtest-pkg-python
 Standards-Version: 4.6.2
-Homepage: <insert the upstream URL, if relevant>
-#Vcs-Browser: https://salsa.debian.org/debian/hello-sonic-pkg
-#Vcs-Git: https://salsa.debian.org/debian/hello-sonic-pkg.git
-
-Package: python3-hello-sonic-pkg
+Package: hello-sonic-pkg
 Architecture: all
 Depends:
  ${python3:Depends},
  ${misc:Depends},
-Suggests:
- python-hello-sonic-pkg-doc,
-Description: <insert up to 60 chars description> (Python 3)
- <Insert long description, indented with spaces.>
- .
- This package installs the library for Python 3.
-
-Package: python-hello-sonic-pkg-doc
-Section: doc
-Architecture: all
-Depends:
- ${sphinxdoc:Depends},
- ${misc:Depends},
-Description: <insert up to 60 chars description> (common documentation)
- <Insert long description, indented with spaces.>
- .
- This is the common documentation package.
+Description: A dummy python package
