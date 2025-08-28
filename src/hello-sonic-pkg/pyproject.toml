@@ -1,0 +1,8 @@
+[build-system]
+requires = ["setuptools", "setuptools_scm[toml]", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools_scm]
+fallback_version = "0.1.0" 
+write_to = "hello_sonic_pkg/_version.py"
+local_scheme = "no-local-version"
