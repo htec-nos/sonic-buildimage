@@ -7,7 +7,7 @@ include /usr/share/dpkg/pkg-info.mk
 export DH_VERBOSE=1
 
 PYTHON        ?= python3
-PACKAGE_PRE_NAME := hello-sonic-pkg
+PACKAGE_PRE_NAME := dummy-http-server
 SRC_DIR:= $(shell pwd)
 
 %:

@@ -4,5 +4,5 @@ build-backend = "setuptools.build_meta"
 
 [tool.setuptools_scm]
 fallback_version = "0.1.0" 
-write_to = "hello_sonic_pkg/_version.py"
+write_to = "dummy_http/_version.py"
 local_scheme = "no-local-version"

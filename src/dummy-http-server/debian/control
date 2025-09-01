@@ -1,4 +1,4 @@
-Source: hello-sonic-pkg
+Source: dummy-http-server
 Section: main
 Priority: optional
 Maintainer: Alberto Martin <alberto.martin@htecgroup.com>
@@ -10,6 +10,6 @@ Build-Depends:
  python3-all,
 Standards-Version: 4.6.2
 
-Package: hello-sonic-pkg
+Package: dummy-http-server
 Architecture: amd64
 Description: A dummy python http server
