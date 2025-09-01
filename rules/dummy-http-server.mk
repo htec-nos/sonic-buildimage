@@ -1,0 +1,8 @@
+# Debian package (no global inclusion here)
+DUMMY_HTTP_PKG_NAME = dummy-http-server
+DUMMY_HTTP_PKG_VERSION = 0.1.0-1
+
+DUMMY_HTTP_PKG = $(DUMMY_HTTP_PKG_NAME)_$(DUMMY_HTTP_PKG_VERSION)_$(CONFIGURED_ARCH).deb
+$(DUMMY_HTTP_PKG)_SRC_PATH = $(SRC_PATH)/dummy-http-server
+
+SONIC_DPKG_DEBS += $(DUMMY_HTTP_PKG)
