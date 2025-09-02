@@ -1,0 +1,19 @@
+[Unit]  
+Description=dummy-http container
+Requires=docker.service
+After=docker.service
+After=database.service
+Before=ntp-config.service
+StartLimitIntervalSec=1200
+StartLimitBurst=3
+
+[Service]
+User=root
+ExecStartPre=/usr/bin/dummy-http.sh start
+ExecStart=/usr/bin/dummy-http.sh wait
+ExecStop=/usr/bin/dummy-http.sh stop
+Restart=always
+RestartSec=30
+
+[Install]
+WantedBy=multi-user.target
