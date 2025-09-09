@@ -9,9 +9,9 @@ class DummyHandler(BaseHTTPRequestHandler):
         self.wfile.write(b"Hello from dummy SONiC service!\n")
         DummyHandler.num_get_requests += 1
         syslog(LOG_INFO, f"Hello syslog! Handled GET request number {DummyHandler.num_get_requests}")
-        print("Hello stdout! This comes from a normal python print statement.")
+        print("Hello stdout! This comes from a normal python print statement.", flush=True)
 
 def main():
     server = HTTPServer(("0.0.0.0", 8080), DummyHandler)
-    print("Dummy service running on port 8080...")
+    print("Dummy service running on port 8080...", flush=True)
     server.serve_forever()
