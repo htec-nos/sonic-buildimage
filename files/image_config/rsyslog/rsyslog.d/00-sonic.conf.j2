@@ -16,6 +16,11 @@ if re_match($programname, "bgp[0-9]*#(frr|zebra|staticd|watchfrr)") then {
     stop
 }
 
+if re_match($programname, "dummy-http#hello-sonic-service") then {
+    /var/log/dummy-http/my_service.log
+    stop
+}
+
 if re_match($programname, "bgp[0-9]*#bgpd") then {
     /var/log/frr/bgpd.log
     {% if include_system_eventd == "y" and build_reduce_image_size != "y" %}
